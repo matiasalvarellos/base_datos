@@ -6,6 +6,10 @@
   <title>Detail</title>
 </head>
 <body>
+  <a href="/">
+    <button>All products</button>
+  </a>
+  <br>
   <h1><%= product.name %></h1>
   <p>Price: <%= product.price %></p>
   <ul>
@@ -17,6 +21,7 @@
   <a href="/edit/<%= product.id %> ">
     <button>Edit</button>
   </a>
+  <br>
   <form action="/delete/<%= product.id %>" method="post">
     <button type="submit">Delete</button>
   </form>

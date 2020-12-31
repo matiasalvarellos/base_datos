@@ -6,6 +6,10 @@
   <title>Create</title>
 </head>
 <body>
+  <a href="/detail/<%= product.id %>">
+    <button>Volver</button>
+  </a>
+  <br>
   <form action="/edit/<%= product.id %> " method="post">
     <p><input type="text" name="name" value="<%= product.name %>"> Name</p>
     <p><input type="text" name="price" value="<%= product.price %>"> Price</p>
