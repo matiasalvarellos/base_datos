@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail</title>
+</head>
+<body>
+  <h1><%= product.name %></h1>
+  <p>Price: <%= product.price %></p>
+  <ul>
+    <% product.colors.forEach(color => { %>
+      <li style="color: <%= color.hexadecimal %>;"><%= color.name %></li>
+    <% }) %>
+  </ul>
+  <br>
+  <a href="/edit/<%= product.id %> ">
+    <button>Edit</button>
+  </a>
+  <form action="/delete/<%= product.id %>" method="post">
+    <button type="submit">Delete</button>
+  </form>
+</body>
+</html>

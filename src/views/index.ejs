@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Products</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Products</h1>
+    <ul>
+      <% products.forEach(product => { %>
+        <li>
+          <a href="/detail/<%= product.id %> ">
+            <p><%= product.name %></p>
+            <ul>
+              <% product.colors.forEach(color => { %>
+                <li style="color: <%= color.hexadecimal %>; "><%= color.name %></li>
+              <% }) %>
+            </ul>
+          </a> 
+       </li>
+      <% }) %>
+    </ul>
+    <a href="/create">
+      <button>New product</button>
+    </a>
   </body>
 </html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create</title>
+</head>
+<body>
+  <form action="/create" method="post">
+    <p><input type="text" name="name"> Name</p>
+    <p><input type="text" name="price"> Price</p>
+    <br>
+    <p>Colors</p>
+    <% colors.forEach(color => { %>
+      <p><input type="checkbox" name="colors" value="<%= color.id %>"><%= color.name %> <span style="width: 20px; height: 20px; display: inline-block; background-color: <%= color.hexadecimal %>; border-radius: 50%"></span></p>
+    <% }) %>
+    <button type="submit">Crear</button>
+  </form>
+</body>
+</html>
